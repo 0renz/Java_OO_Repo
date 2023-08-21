@@ -20,11 +20,26 @@ public class Java_maven_too_20232 {
             
             for(int coluna=0; coluna < rgDados1[linha].length; coluna++){
                 
+                boolean erro = true;
+                
                 System.out.println("Digite um valor: ");
-                if(sc.hasNext()){
-                    int i = Integer.parseInt(sc.next());
-                    rgDados1[linha][coluna] = i;
-                }                
+                
+                while(erro)
+                {
+                    try
+                    {
+                         if(sc.hasNext()) 
+                                 {
+                                    int i = Integer.parseInt(sc.next()); 
+                                    rgDados1[linha][coluna] = i;
+                                     erro = false; 
+                                 }
+                        
+                    } catch(NumberFormatException e) {
+                        System.out.println("Erro: " +e.getLocalizedMessage() + "tente novamente ");
+                        erro = true;
+                    }
+                }              
             }                        
         }
         
@@ -33,11 +48,26 @@ public class Java_maven_too_20232 {
             
             for(int coluna=0; coluna < rgDados2[linha].length; coluna++){
                 
+                boolean erro = true;
+                
                 System.out.println("Digite um valor: ");
-                if(sc.hasNext()){
-                    int i = Integer.parseInt(sc.next());
-                    rgDados2[linha][coluna] = i;
-                }                
+                
+                while(erro)
+                {
+                    try
+                    {
+                         if(sc.hasNext()) 
+                                 {
+                                    int i = Integer.parseInt(sc.next());
+                                    rgDados2[linha][coluna] = i;
+                                     erro = false; 
+                                 }
+                        
+                    } catch(NumberFormatException e) {
+                        System.out.println("Erro: " +e.getLocalizedMessage() + "tente novamente ");
+                        erro = true;
+                    }
+                }               
             }                        
         }
         
@@ -52,6 +82,5 @@ public class Java_maven_too_20232 {
             }      
             System.out.println("\n");
         }
-
     }  
 }

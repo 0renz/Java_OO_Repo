@@ -1,1 +1,1 @@
-Receptáculo de atividade envolvendo Java e orientação a objetos 
+Receptáculo de atividades envolvendo a linguagem Java e orientação a objetos 

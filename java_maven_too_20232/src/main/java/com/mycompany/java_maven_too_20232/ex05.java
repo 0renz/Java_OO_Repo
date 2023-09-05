@@ -1,9 +1,5 @@
 package com.mycompany.java_maven_too_20232;
 
-/**
- *
- * @author telmo
- */
 public class ex05 {
 
     static String strDados = "Teste";

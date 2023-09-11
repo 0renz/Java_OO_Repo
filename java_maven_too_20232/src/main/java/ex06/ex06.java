@@ -18,8 +18,7 @@ public class ex06 { //Modificador FINAL e STATIC
         // Um método estático (ou método de classe, pois pode ser chamado diretamente pelo nome da classe) 
         // não depende do estado particular de cada objeto
         
-        
-
+     
     }
   }
 

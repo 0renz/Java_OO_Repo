@@ -1,4 +1,4 @@
-package br.edu.ifsul.bcc.too.topico3.exercicios;
+package testeDatas;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,8 +14,8 @@ public class testeDatas {
     public testeDatas(){
         
         formatador = new SimpleDateFormat("dd/MM/yyyy");
-        dataCalendar = Calendar.getInstance();
         
+        dataCalendar = Calendar.getInstance();
         dataCalendar.set(Calendar.DAY_OF_MONTH, 12);
         dataCalendar.set(Calendar.YEAR, 1983);
         dataCalendar.set(Calendar.MONTH, 0); //janeiro tem índice zero
@@ -42,14 +42,22 @@ public class testeDatas {
         
         System.out.println("Data maior - retorno 1: " + dataDate.compareTo(dataCalendar.getTime()));
         System.out.println("Datas iguais - retorno 0: " + dataCalendar.compareTo(dataCalendar));
-        System.out.println("Data menor - retorno -1: " + dataCalendar.compareTo(dataDate));
+        //System.out.println("Data menor - retorno -1: " + dataCalendar.compareTo(dataDate));
         
         //EX3: Converter a string "25/09/1983" para java.util.calendar
+        
+        String dataEx3 = "25/09/1983";
+        System.out.println("Data formatada EX3: " +  formatador.format(dataCalendar));
+        
         //EX4: Converter a string "25/09/1983" para java.util.date
+        
+        String dataEx4 = "25/09/1983";
+        System.out.println("Data formatada EX4: " +  formatador.format(dataEx4));
+        
+        //System.out.println("Data EX3: " + dataEx4);
     }
     
-    public static void main(String[] args){
-        new testeDatas();
-        
+     public static void main(String[] args){
+         new testeDatas();
     }
 }

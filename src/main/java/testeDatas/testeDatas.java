@@ -1,5 +1,6 @@
 package testeDatas;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,9 +17,11 @@ public class testeDatas {
         formatador = new SimpleDateFormat("dd/MM/yyyy");
         
         dataCalendar = Calendar.getInstance();
+        
         dataCalendar.set(Calendar.DAY_OF_MONTH, 12);
         dataCalendar.set(Calendar.YEAR, 1983);
         dataCalendar.set(Calendar.MONTH, 0); //janeiro tem índice zero
+        
         
         String dataFormatada = formatador.format(dataCalendar.getTime());
         
@@ -34,6 +37,8 @@ public class testeDatas {
         long miliCalendar = dataCalendar.getTimeInMillis();
         long miliDate = dataDate.getTime();
         
+        System.out.println("Data calendar em milisegundos: " + miliCalendar);
+        
        
         System.out.println("Subtração das duas datas: " + (miliCalendar - miliDate));
         
@@ -45,16 +50,20 @@ public class testeDatas {
         //System.out.println("Data menor - retorno -1: " + dataCalendar.compareTo(dataDate));
         
         //EX3: Converter a string "25/09/1983" para java.util.calendar
-        
-        String dataEx3 = "25/09/1983";
-        System.out.println("Data formatada EX3: " +  formatador.format(dataCalendar));
-        
         //EX4: Converter a string "25/09/1983" para java.util.date
         
-        String dataEx4 = "25/09/1983";
-        System.out.println("Data formatada EX4: " +  formatador.format(dataEx4));
-        
-        //System.out.println("Data EX3: " + dataEx4);
+        try {
+           Calendar CalendarTeste = Calendar.getInstance();
+           CalendarTeste.setTime(formatador.parse("25/09/1983"));
+           Date dateTeste;
+           dateTeste = formatador.parse("25/09/1983");
+           
+           System.out.println("Data calendar: " + CalendarTeste);
+           System.out.println("Data date: " + dateTeste);
+        }
+        catch(ParseException ex) {
+            System.out.println("Erro: " + ex.getLocalizedMessage());
+        }
     }
     
      public static void main(String[] args){

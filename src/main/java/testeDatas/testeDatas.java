@@ -27,7 +27,7 @@ public class testeDatas {
         System.out.print("\n");
 
         System.out.println("Data do tipo date: " + dataDate); // Thu Sep 21 10:06:55 BRT 2023 [created up there]
-        // Notice that there are a bunch of more information
+        // Notice that there is a bunch of more information
         dataDateTeste = new Date(); // same thing as dataDate
         dataDateTeste.setDate(11); //DEPRECATED
         dataDateTeste.setMonth(10); //DEPRECATED

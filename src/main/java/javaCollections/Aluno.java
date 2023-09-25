@@ -27,13 +27,13 @@ public class Aluno implements Comparable<Aluno> {
     public int compareTo(Aluno t) {
         
         //ascendente pela matricula
-        //return this.matricula.compareTo(t.matricula);
+        return this.matricula.compareTo(t.matricula);
         
         //descendente pela matricula
         //return t.matricula.compareTo(this.matricula);
         
         //ascendente pelo nome
-        return this.nome.compareTo(t.nome);
+        //return this.nome.compareTo(t.nome);
         
         //desccendente pelo nome
         //  return t.nome.compareTo(this.nome);

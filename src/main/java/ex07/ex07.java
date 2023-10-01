@@ -1,10 +1,12 @@
 package ex07;
 
+import java.lang.reflect.AccessFlag;
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.Collections;
-import javaCollections.javaCollections;
 
 /**
  * @author 0renz
@@ -24,31 +26,56 @@ import javaCollections.javaCollections;
            Adicione-os em uma lista. Implemente um mescanismo para classificar os objetos contidos nessa lista pelo modelo (descendente).
            Imprima na tela os Pneus.
 
-        7.3) Altere a classe Carro incluindo um atributo para armazenar uma lista de Pneus. Na classe Exercicio7 crie um novo método para realizar os seguintes procedimentos:
-             criar e inicializar três objetos do tipo Carro. Para cada objeto do tipo Carro, adicione outros 4 objetos do tipo Pneu. Imprima na tela a lista de Carros e os seus respectivos Pneus.        
+        7.3) Altere a classe Carro incluindo um atributo para armazenar uma lista de Pneus. 
+             Na classe Exercicio7 crie um novo método para realizar os seguintes procedimentos:
+             criar e inicializar três objetos do tipo Carro. Para cada objeto do tipo Carro, 
+             adicione outros 4 objetos do tipo Pneu. Imprima na tela a lista de Carros e os seus respectivos Pneus.        
  */
 public class ex07 {
 
     private Map<String, Carro> mp;
+    private List<Integer> list;
 
-    public void MetodoCriaCarros() {
-        SortedMap<String, Carro> mp = new TreeMap();
+    public void MetodoCriaPneus() {
+
+        java.util.List<Pneu> list = new ArrayList();
+
+        Pneu p1 = new Pneu(1, "1", 10, 150, "fab1", 5500.00);
+        Pneu p2 = new Pneu(2, "2", 15, 250, "fab2", 3000.00);
+        Pneu p3 = new Pneu(3, "3", 20, 350, "fab3", 9000.00);
+        Pneu p4 = new Pneu(4, "4", 25, 400, "fab4", 16000.00);
+
+        list.add(p1);
+        list.add(p2);
+        list.add(p3);
+        list.add(p4);
         
+        System.out.println("Lista de Pneus: " + list);
+        Collections.sort(list);
+        System.out.println("Lista de Pneus em ordem decrescente pelo modelo: " + list);
+    }
+    
+    public void MetodoCriaCarros() {
+        
+        SortedMap<String, Carro> mp = new TreeMap();
+
         mp.put("0", new Carro("Nome 1", "Kwid", "Renault", 111111, 5555.55));
+
         mp.put("1", new Carro("Nome 2", "Mobi ", "Fiat", 222222, 6666.66));
         mp.put("2", new Carro("Nome 3", "C3 ", "Citroën", 333333, 7777.77));
-        mp.put("3", new Carro("Nome 4", "Stepway ", "Renault", 444444, 88888.88));
-        mp.put("4", new Carro("Nome 5", "Argo", "Fiat", 555555, 99999.99));
-        
+
         for (Map.Entry<String, Carro> m : mp.entrySet()) {
-            System.out.println("Chave: " + m.getKey() + " Carro: " + m.getValue());
+            System.out.println("Chave: " + m.getKey() + " [ " + m.getValue() + " ]");
         }
 
     }
 
     public static void main(String[] args) {
-        new ex07().MetodoCriaCarros();
+
+        new ex07().MetodoCriaPneus();
         System.out.println();
+        new ex07().MetodoCriaCarros();
+
     }
 
 }

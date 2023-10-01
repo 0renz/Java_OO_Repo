@@ -1,4 +1,5 @@
 package ex07;
+import java.util.List;
 
 /**
  * @author 0renz
@@ -8,6 +9,7 @@ public class Carro {
     String nome, modelo, fabricante;
     int numChassi;
     double valorMercado;
+    public List<Pneu> listaPneus;
 
     public Carro() {
     }

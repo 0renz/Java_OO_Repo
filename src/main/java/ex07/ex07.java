@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
 import java.util.SortedMap;
+import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.Collections;
 
@@ -35,6 +36,7 @@ public class ex07 {
 
     private Map<String, Carro> mp;
     private List<Integer> list;
+    private SortedSet<Integer> SS; //  interface que estende Map, e permite classificação ascendente das chaves. não usado no exercicio
 
     public void MetodoCriaPneus() {
 
@@ -60,7 +62,6 @@ public class ex07 {
         SortedMap<String, Carro> mp = new TreeMap();
 
         mp.put("0", new Carro("Nome 1", "Kwid", "Renault", 111111, 5555.55));
-
         mp.put("1", new Carro("Nome 2", "Mobi ", "Fiat", 222222, 6666.66));
         mp.put("2", new Carro("Nome 3", "C3 ", "Citroën", 333333, 7777.77));
 

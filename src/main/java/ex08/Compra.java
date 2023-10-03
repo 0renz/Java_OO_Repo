@@ -43,7 +43,7 @@ public class Compra {
 
             SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss SSS");
 
-            return "Codigo: " + getCodigo() + " Emissao: " + f.format(data_emissao.getTime()) + " Saída: " + f.format(data_saida);
+            return "Codigo: " + getCodigo() + " Emissao: " + f.format(data_emissao.getTime()) + " Saída: " + f.format(data_saida) + "\n";
         }
 
         return super.toString();

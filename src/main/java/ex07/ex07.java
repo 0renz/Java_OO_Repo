@@ -61,12 +61,41 @@ public class ex07 {
         
         SortedMap<String, Carro> mp = new TreeMap();
 
-        mp.put("0", new Carro("Nome 1", "Kwid", "Renault", 111111, 5555.55));
-        mp.put("1", new Carro("Nome 2", "Mobi ", "Fiat", 222222, 6666.66));
-        mp.put("2", new Carro("Nome 3", "C3 ", "Citroën", 333333, 7777.77));
+        Carro carro1 = new Carro("Nome 1", "Kwid", "Renault", 111111, 55455.55, new ArrayList<Pneu>() {{
+            add(new Pneu(1, "1", 10, 150, "fab1", 5500.00));
+            add(new Pneu(2, "2", 15, 250, "fab2", 3000.00));
+            add(new Pneu(3, "3", 20, 350, "fab3", 9000.00));
+            add(new Pneu(4, "4", 25, 400, "fab4", 16000.00));
+        }});
+        
+        Carro carro2 = new Carro("Nome 2", "Kwid2", "Renault2", 222222, 55525.55, new ArrayList<Pneu>() {{
+            add(new Pneu(1, "1", 10, 150, "fab1", 5500.00));
+            add(new Pneu(2, "2", 15, 250, "fab2", 3000.00));
+            add(new Pneu(3, "3", 20, 350, "fab3", 9000.00));
+            add(new Pneu(4, "4", 25, 400, "fab4", 16000.00));
+        }});
+        
+        Carro carro3 = new Carro("Nome 3", "Kwid3", "Renault3", 333333, 55155.55, new ArrayList<Pneu>() {{
+            add(new Pneu(1, "1", 10, 150, "fab1", 5500.00));
+            add(new Pneu(2, "2", 15, 250, "fab2", 3000.00));
+            add(new Pneu(3, "3", 20, 350, "fab3", 9000.00));
+            add(new Pneu(4, "4", 25, 400, "fab4", 16000.00));
+        }});
+        
+        Carro carro4 = new Carro("Nome 4", "Kwid4", "Renault4", 4444444, 55455.55, new ArrayList<Pneu>() {{
+            add(new Pneu(1, "1", 10, 150, "fab1", 5500.00));
+            add(new Pneu(2, "2", 15, 250, "fab2", 3000.00));
+            add(new Pneu(3, "3", 20, 350, "fab3", 9000.00));
+            add(new Pneu(4, "4", 25, 400, "fab4", 16000.00));
+        }});
+        
+        mp.put("0", carro1);
+        mp.put("1", carro2);
+        mp.put("2", carro3);
+        mp.put("3", carro4);
 
         for (Map.Entry<String, Carro> m : mp.entrySet()) {
-            System.out.println("Chave: " + m.getKey() + " [ " + m.getValue() + " ]");
+            System.out.println("Chave: " + m.getKey() + " [ " + m.getValue() + " ] \n");
         }
 
     }

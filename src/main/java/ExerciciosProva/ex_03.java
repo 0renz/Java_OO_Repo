@@ -1,5 +1,8 @@
 package ExerciciosProva;
 
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  *
  * @author 20222PF.CC0021
@@ -7,28 +10,23 @@ package ExerciciosProva;
 public class ex_03 {
 
     private Integer[] dados = {40, -10, 60, -1, 5, -25, 11, 3};
+    private Set ordenado = new TreeSet();
 
     public ex_03() {
         metodoClassificaDados();
     }
 
     public void metodoClassificaDados() {
-        int dadosAux;
         
-        for (int i = 0; i < dados.length; i++) {
-            for (int j = 0; j < dados.length; j++) {
-                if (dados[i] < dados[j]) {
-                    dadosAux = dados[i];
-                    dados[i] = dados[j];
-                    dados[j] = dadosAux;
-                }
+            int aux, i = 0;
+            
+            for (Object o : dados)
+            {
+                ordenado.add(dados[i]);
+                i++;
             }
-        }
-        
-        System.out.println("Dados ordenados:");
-        for (int i = 0; i < dados.length; i++) {
-            System.out.print(dados[i] + " ");
-        }
+            System.out.println(ordenado);
+   
     }
 
     public static void main(String args[]) {

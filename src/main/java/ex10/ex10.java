@@ -41,7 +41,7 @@ public class ex10 {
                 - Nome fantasia: Bar do Zé (Pessoa Juridica)
     
     */
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     
     ex10() throws ParseException{
         ClientePessoaFisica cpf1, cpf2;

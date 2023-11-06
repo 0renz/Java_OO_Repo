@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 public class Cliente {
 
     //Na classe Cliente defina os atributos protegidos: endereco, bairro, telefone, ultimaCompra.
+    //Filho da classe = atributo da instância
+    //Filho do método = variável local
     protected String endereco;
     protected String bairro;
     protected Integer telefone;

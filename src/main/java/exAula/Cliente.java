@@ -1,28 +1,29 @@
 package exAula;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa {
     //data_ultima_compra
     //observacoes
-    
-    private java.util.Date dataUltimaCompra;
+
+    private java.util.Calendar dataUltimaCompra; //mudar para calendar
     private String Observacoes;
 
     public Cliente() {
     }
 
-    public Cliente(Date dataUltimaCompra, String Observacoes) {
+    public Cliente(Calendar dataUltimaCompra, String Observacoes) {
         this.dataUltimaCompra = dataUltimaCompra;
         this.Observacoes = Observacoes;
     }
 
-    public Date getDataUltimaCompra() {
-        return dataUltimaCompra;
+    public String getDataUltimaCompra() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(this.dataUltimaCompra.getTime());
     }
 
-    public void setDataUltimaCompra(Date dataUltimaCompra) {
+    public void setDataUltimaCompra(Calendar dataUltimaCompra) {
         this.dataUltimaCompra = dataUltimaCompra;
     }
 
@@ -32,5 +33,5 @@ public class Cliente extends Pessoa{
 
     public void setObservacoes(String Observacoes) {
         this.Observacoes = Observacoes;
-    }  
+    }
 }

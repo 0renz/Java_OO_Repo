@@ -1,5 +1,7 @@
 package exAula;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Pessoa {
@@ -9,14 +11,14 @@ public class Pessoa {
     private String nome;
     private String logradouro;
     private Integer numero;
-    private java.util.Date dataNasc;
+    private Calendar dataNasc;
     private Float peso;
     private Boolean status;
 
     public Pessoa() {
     }
 
-    public Pessoa(String cpf, String rg, String nome, String logradouro, Integer numero, Date dataNasc, Float peso) {
+    public Pessoa(String cpf, String rg, String nome, String logradouro, Integer numero, Calendar dataNasc, Float peso) {
         this.cpf = cpf;
         this.rg = rg;
         this.nome = nome;
@@ -26,7 +28,7 @@ public class Pessoa {
         this.peso = peso;
     }
 
-    public Pessoa(String cpf, String rg, String nome, String logradouro, Integer numero, Date dataNasc, Float peso, Boolean status) {
+    public Pessoa(String cpf, String rg, String nome, String logradouro, Integer numero, Calendar dataNasc, Float peso, Boolean status) {
         this.cpf = cpf;
         this.rg = rg;
         this.nome = nome;
@@ -77,11 +79,13 @@ public class Pessoa {
         this.numero = numero;
     }
 
-    public Date getDataNasc() {
-        return dataNasc;
+    public String getDataNasc() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        
+        return sdf.format(this.dataNasc.getTime());
     }
 
-    public void setDataNasc(Date dataNasc) {
+    public void setDataNasc(Calendar dataNasc) {
         this.dataNasc = dataNasc;
     }
 

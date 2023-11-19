@@ -25,48 +25,87 @@ public class exAula {
 
     public void ex2() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Cliente c = generateCliente();
         Calendar cal = Calendar.getInstance();
-        Produto p = null;
-        Foto f = null;
-        Pedido pd = null;
 
-        if (c instanceof Cliente) {
-            cal.setTime(sdf.parse(c.getDataUltimaCompra()));
-            System.out.println("(Cliente) Data da ultima compra: " + sdf.format(cal.getTime()));
-            System.out.println("Observações: " + c.getObservacoes());
-            System.out.println("CPF: " + c.getCpf());
-            System.out.println("RG: " + c.getRg());
-            System.out.println("Nome: " + c.getNome());
-            System.out.println("Logradouro: " + c.getLogradouro());
-            
-            cal.setTime(sdf.parse(c.getDataNasc()));
-            System.out.println("Data de nascimento: " + sdf.format(cal.getTime()));
-            System.out.println("Status: " + c.getStatus());
-        }
+        Cliente c = generateCliente();
+        cal.setTime(sdf.parse(c.getDataUltimaCompra()));
+        System.out.println("Data da ultima compra: " + sdf.format(cal.getTime()));
+        System.out.println("Observações: " + c.getObservacoes());
+        System.out.println("CPF: " + c.getCpf());
+        System.out.println("RG: " + c.getRg());
+        System.out.println("Nome: " + c.getNome());
+        System.out.println("Logradouro: " + c.getLogradouro());
+        cal.setTime(sdf.parse(c.getDataNasc()));
+        System.out.println("Data de nascimento: " + sdf.format(cal.getTime()));
+        System.out.println("Status: " + c.getStatus());
+
+        Produto p = generateProduto();
+        generateFoto(p);
+        Pedido pd = generatePedido(c, p);
+        imprimePedido(pd);
+        
     }
 
     private Cliente generateCliente() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Cliente c = new Cliente();
         Calendar cal = Calendar.getInstance();
-        
+
         cal.setTime(sdf.parse(JOptionPane.showInputDialog("Digite a data da compra: ")));
-        c.setDataUltimaCompra(cal);
+        c.setDataUltimaCompra((Calendar) cal.clone());
         c.setObservacoes(JOptionPane.showInputDialog("Digite as observações: "));
-        
+
         c.setCpf(JOptionPane.showInputDialog("Digite o CPF: "));
         c.setRg(JOptionPane.showInputDialog("Digite o RG: "));
         c.setNome(JOptionPane.showInputDialog("Digite o nome: "));
         c.setLogradouro(JOptionPane.showInputDialog("Digite o logradouro: "));
-        
+
         cal.setTime(sdf.parse(JOptionPane.showInputDialog("Digite a data de nascimento: ")));
-        c.setDataNasc(cal);
-        
+        c.setDataNasc((Calendar) cal.clone());
+
         c.setPeso(Float.valueOf(JOptionPane.showInputDialog("Digite o peso: ")));
         c.setStatus(Boolean.valueOf(JOptionPane.showInputDialog("Digite o Status: ")));
-        
+
         return c;
+    }
+
+    private Produto generateProduto() throws ParseException {
+        Produto p = new Produto();
+
+        p.setId(Integer.valueOf(JOptionPane.showInputDialog("Digite o ID do produto")));
+        p.setNome(JOptionPane.showInputDialog("Digite o nome do produto"));
+        p.setValor(Float.valueOf(JOptionPane.showInputDialog("Digite o valor do produto")));
+        return p;
+    }
+
+    private Foto generateFoto(Produto p) throws ParseException {
+        Foto f = new Foto();
+        f.setCodigo(Integer.valueOf(JOptionPane.showInputDialog("Digite o codigo da foto")));
+        f.setFilename(JOptionPane.showInputDialog("Digite o nome do arquivo"));
+        f.setPath(JOptionPane.showInputDialog("Digite o caminho do arquivo"));
+        //f.setfile não se como faz
+        f.setProduto(p);
+        return f;
+    }
+    
+    private Pedido generatePedido(Cliente c, Produto p) throws ParseException {
+        Pedido pd = new Pedido();
+        Calendar cal = Calendar.getInstance();
+        pd.setCodigo(1);
+        pd.setData((Calendar)cal.clone());
+        pd.setValorTotal(p.getValor());
+        pd.setNomeCliente(c);
+        pd.setProdutos(p);
+        return pd;
+    }
+    
+    private void imprimePedido(Pedido pd) throws ParseException {
+        System.out.println("\nPEDIDO:");
+        System.out.println("Código: " + pd.getCodigo());
+        System.out.println("Data: " + pd.getData());
+        System.out.println("Valor total: " + pd.getValorTotal());
+        System.out.println("Nome do cliente: " + pd.getNomeCliente().getNome());
+        System.out.println("Produto: " + pd.getProdutos());
     }
 
     public static ArrayList<Pessoa> getPessoas() throws ParseException {
@@ -107,13 +146,12 @@ public class exAula {
         //c1.setNome("Luan");
         //c2 = new Cliente(sdf.parse("04/01/2345"), "não");
         //c2.setNome("Otavio");
-
         f1 = new Funcionario("5555", sdf.parse("01/01/2024"));
 
         ListaPessoa.add(f1);
         ListaPessoa.add(a1);
         ListaPessoa.add(a2);
-       // ListaPessoa.add(c1);
+        // ListaPessoa.add(c1);
         //ListaPessoa.add(c2);
 
         ListaPessoa.add(p1);

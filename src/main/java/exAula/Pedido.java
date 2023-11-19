@@ -1,7 +1,8 @@
 package exAula;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
+import java.util.Calendar;
 
 public class Pedido {
 
@@ -10,7 +11,7 @@ public class Pedido {
     // um funcionário tem uma coleção de cursos
     //pedido é uma ASSOCIAÇÃO (aponta pra cliente) ou seja, um relação 1:N
     private Integer codigo;
-    private java.util.Date data;
+    private Calendar data;
     private Float valorTotal;
     private Cliente nomeCliente;
     private Collection<Produto> produtos; // (Um pedido pode ter um ou vários produtos)
@@ -18,7 +19,7 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(Integer codigo, Date data, Float valorTotal, Cliente nomeCliente, Collection<Produto> produtos) {
+    public Pedido(Integer codigo, Calendar data, Float valorTotal, Cliente nomeCliente, Collection<Produto> produtos) {
         this.codigo = codigo;
         this.data = data;
         this.valorTotal = valorTotal;
@@ -26,7 +27,6 @@ public class Pedido {
         this.produtos = produtos;
     }
 
-   
     public Integer getCodigo() {
         return codigo;
     }
@@ -35,11 +35,11 @@ public class Pedido {
         this.codigo = codigo;
     }
 
-    public Date getData() {
+    public Calendar getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(Calendar data) {
         this.data = data;
     }
 
@@ -66,8 +66,11 @@ public class Pedido {
     public void setProdutos(Collection<Produto> produtos) {
         this.produtos = produtos;
     }
-    
-    
 
-    
+    public void setProdutos(Produto produto) {
+        if (this.produtos == null) {
+            this.produtos = new ArrayList();
+        }
+        this.produtos.add(produto);
+    }
 }

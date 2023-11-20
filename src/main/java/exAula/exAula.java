@@ -19,8 +19,8 @@ import java.util.Calendar;
 public class exAula {
 
     public exAula() throws ParseException {
-        imprimePessoa(getPessoas());
-        ex2();
+        imprimePessoa(getPessoas()); // exercício 1
+        ex2(); // exercício 2
     }
 
     public void ex2() throws ParseException {
@@ -43,7 +43,7 @@ public class exAula {
         generateFoto(p);
         Pedido pd = generatePedido(c, p);
         imprimePedido(pd);
-        
+
     }
 
     private Cliente generateCliente() throws ParseException {
@@ -87,19 +87,26 @@ public class exAula {
         f.setProduto(p);
         return f;
     }
-    
+
     private Pedido generatePedido(Cliente c, Produto p) throws ParseException {
         Pedido pd = new Pedido();
         Calendar cal = Calendar.getInstance();
         pd.setCodigo(1);
-        pd.setData((Calendar)cal.clone());
+        pd.setData((Calendar) cal.clone());
         pd.setValorTotal(p.getValor());
-        pd.setNomeCliente(c);
-        pd.setProdutos(p);
+        pd.setNomeCliente(c); // que na verdade é o cliente inteiro
+
+        for (Produto pdt : pd.getProdutos()) {
+            System.out.println("Produto: " + pdt.getId()); // imprime todos os produtos do pedido
+            for (Foto ft : pdt.getFotos()) {
+                System.out.println("" + ft.getCodigo()); //imprime todas as fotos de cada produto
+            }
+        }
+        pd.setProduto(p);
         return pd;
     }
-    
-    private void imprimePedido(Pedido pd) throws ParseException {
+
+    private void imprimePedido(Pedido pd) {
         System.out.println("\nPEDIDO:");
         System.out.println("Código: " + pd.getCodigo());
         System.out.println("Data: " + pd.getData());
@@ -108,16 +115,21 @@ public class exAula {
         System.out.println("Produto: " + pd.getProdutos());
     }
 
-    public static ArrayList<Pessoa> getPessoas() throws ParseException {
+    public static ArrayList<Pessoa> getPessoas() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         ArrayList<Pessoa> ListaPessoa = new ArrayList<>();
 
-        Funcionario f1;
+        Funcionario f1 = new Funcionario();
         Cliente c1, c2;
         Aluno a1, a2;
 
-        Pessoa p1 = new Funcionario("sasa", sdf.parse("11/11/2033")); //tem que setar tudo
+        Pessoa p1 = new Funcionario();
+        try {
+            p1 = new Funcionario("sasa", sdf.parse("11/11/2033")); //tem que setar tudo
+        } catch (ParseException ex) {
+            Logger.getLogger(exAula.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Pessoa p2 = new Aluno("1111", 5.5f);
 
         p1.setCpf("111");
@@ -142,11 +154,15 @@ public class exAula {
         a2 = new Aluno("456", 8.8f);
         a2.setNome("Gustavo");
 
-        //c1 = new Cliente(sdf.parse("10/09/2345"), "sim");
-        //c1.setNome("Luan");
-        //c2 = new Cliente(sdf.parse("04/01/2345"), "não");
-        //c2.setNome("Otavio");
-        f1 = new Funcionario("5555", sdf.parse("01/01/2024"));
+        try {
+            //c1 = new Cliente(sdf.parse("10/09/2345"), "sim");
+            //c1.setNome("Luan");
+            //c2 = new Cliente(sdf.parse("04/01/2345"), "não");
+            //c2.setNome("Otavio");
+            f1 = new Funcionario("5555", sdf.parse("01/01/2024"));
+        } catch (ParseException ex) {
+            Logger.getLogger(exAula.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         ListaPessoa.add(f1);
         ListaPessoa.add(a1);

@@ -1,8 +1,11 @@
 package exAula;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Pessoa {
 
@@ -81,12 +84,25 @@ public class Pessoa {
 
     public String getDataNasc() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        
+
         return sdf.format(this.dataNasc.getTime());
     }
 
     public void setDataNasc(Calendar dataNasc) {
         this.dataNasc = dataNasc;
+    }
+
+    public void setDataNasc(String dataNasc) {
+        if (dataNasc != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Calendar c = Calendar.getInstance();
+            try {
+                c.setTimeInMillis(sdf.parse(dataNasc).getTime());
+                this.dataNasc = c;
+            } catch (ParseException ex) {
+               this.dataNasc = null;
+            }
+        }
     }
 
     public Float getPeso() {
@@ -103,5 +119,5 @@ public class Pessoa {
 
     public void setStatus(Boolean status) {
         this.status = status;
-    } 
+    }
 }

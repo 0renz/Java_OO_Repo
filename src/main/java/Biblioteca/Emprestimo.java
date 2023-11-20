@@ -12,16 +12,22 @@ public class Emprestimo {
     java.util.Calendar data_devolucao;
     java.util.Calendar data_devolvido;
     Boolean situacao;
+    Funcionario funcionario;
+    Aluno aluno;
+    Exemplar exemplar;
 
     public Emprestimo() {
     }
 
-    public Emprestimo(Integer id, Calendar data, Calendar data_devolucao, Calendar data_devolvido, Boolean situacao) {
+    public Emprestimo(Integer id, Calendar data, Calendar data_devolucao, Calendar data_devolvido, Boolean situacao, Funcionario funcionario, Aluno aluno, Exemplar exemplar) {
         this.id = id;
         this.data = data;
         this.data_devolucao = data_devolucao;
         this.data_devolvido = data_devolvido;
         this.situacao = situacao;
+        this.funcionario = funcionario;
+        this.aluno = aluno;
+        this.exemplar = exemplar;
     }
 
     public Integer getId() {
@@ -63,4 +69,30 @@ public class Emprestimo {
     public void setSituacao(Boolean situacao) {
         this.situacao = situacao;
     }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Exemplar getExemplar() {
+        return exemplar;
+    }
+
+    public void setExemplar(Exemplar exemplar) {
+        this.exemplar = exemplar;
+    }
+    
+    
 }

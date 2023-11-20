@@ -67,9 +67,9 @@ public class Pedido {
         this.produtos = produtos;
     }
 
-    public void setProdutos(Produto produto) {
+    public void setProduto(Produto produto) { // singular
         if (this.produtos == null) {
-            this.produtos = new ArrayList();
+            this.produtos = new ArrayList(); // opcional ser arraylist
         }
         this.produtos.add(produto);
     }

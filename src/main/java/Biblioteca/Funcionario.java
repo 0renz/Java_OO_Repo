@@ -11,7 +11,7 @@ import java.util.Calendar;
  * @author 0renz
  */
 public class Funcionario extends Pessoa{
-    String numero_ctps;
+    private String numero_ctps;
     
 
     public Funcionario() {

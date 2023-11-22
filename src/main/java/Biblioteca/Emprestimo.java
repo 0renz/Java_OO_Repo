@@ -7,11 +7,13 @@ import java.util.Calendar;
  * @author 0renz
  */
 public class Emprestimo {
-    Integer id;
-    java.util.Calendar data;
-    java.util.Calendar data_devolucao;
-    java.util.Calendar data_devolvido;
-    Boolean situacao;
+    private Integer id;
+    private java.util.Calendar data;
+    private java.util.Calendar data_devolucao;
+    private java.util.Calendar data_devolvido;
+    private Boolean situacao;
+    private Funcionario ctps;
+    
 
     public Emprestimo() {
     }

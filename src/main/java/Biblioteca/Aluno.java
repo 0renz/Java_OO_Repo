@@ -11,7 +11,7 @@ import java.util.Calendar;
  * @author 0renz
  */
 public class Aluno extends Pessoa{
-    String matricula;
+    private String matricula;
 
     public Aluno() {
     }

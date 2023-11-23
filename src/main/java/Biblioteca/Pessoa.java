@@ -15,7 +15,7 @@ public class Pessoa {
     private String nome;
     private String rg; 
     private String logradouro;
-    private String ceo;
+    private String cep;
     private Integer numero;
     private java.util.Calendar data_cadastro;
     private java.util.Calendar data_nascimento;
@@ -24,12 +24,12 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String cpf, String nome, String rg, String logradouro, String ceo, Integer numero, Calendar data_cadastro, Calendar data_nascimento) {
+    public Pessoa(String cpf, String nome, String rg, String logradouro, String cep, Integer numero, Calendar data_cadastro, Calendar data_nascimento) {
         this.cpf = cpf;
         this.nome = nome;
         this.rg = rg;
         this.logradouro = logradouro;
-        this.ceo = ceo;
+        this.cep = cep;
         this.numero = numero;
         this.data_cadastro = data_cadastro;
         this.data_nascimento = data_nascimento;
@@ -68,11 +68,11 @@ public class Pessoa {
     }
 
     public String getCeo() {
-        return ceo;
+        return cep;
     }
 
     public void setCeo(String ceo) {
-        this.ceo = ceo;
+        this.cep = ceo;
     }
 
     public Integer getNumero() {

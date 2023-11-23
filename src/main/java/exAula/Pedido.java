@@ -1,5 +1,6 @@
 package exAula;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Calendar;
@@ -35,8 +36,9 @@ public class Pedido {
         this.codigo = codigo;
     }
 
-    public Calendar getData() {
-        return data;
+    public String getData() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(this.data.getTime());
     }
 
     public void setData(Calendar data) {
@@ -67,9 +69,9 @@ public class Pedido {
         this.produtos = produtos;
     }
 
-    public void setProdutos(Produto produto) {
+    public void setProduto(Produto produto) { // singular
         if (this.produtos == null) {
-            this.produtos = new ArrayList();
+            this.produtos = new ArrayList(); // opcional ser arraylist
         }
         this.produtos.add(produto);
     }

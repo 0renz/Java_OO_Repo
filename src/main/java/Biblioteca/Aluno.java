@@ -16,8 +16,8 @@ public class Aluno extends Pessoa{
     public Aluno() {
     }
 
-    public Aluno(String matricula, String cpf, String nome, String rg, String logradouro, String ceo, Integer numero, Calendar data_cadastro, Calendar data_nascimento) {
-        super(cpf, nome, rg, logradouro, ceo, numero, data_cadastro, data_nascimento);
+    public Aluno(String matricula, String cpf, String nome, String rg, String logradouro, String cep, Integer numero, Calendar data_cadastro, Calendar data_nascimento) {
+        super(cpf, nome, rg, logradouro, cep, numero, data_cadastro, data_nascimento);
         this.matricula = matricula;
     }
     

@@ -62,5 +62,10 @@ public class Produto {
         this.fotos.add(foto);
     }
     
+    @Override
+    public String toString() {
+        return nome;
+    }
+    
     
 }

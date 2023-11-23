@@ -19,7 +19,6 @@ public class CursoAprimoramento {
     }
     
 
-
     public CursoAprimoramento(Integer codigo, String nome, String descricao, Integer cargaHoraria) {
         this.codigo = codigo;
         this.nome = nome;

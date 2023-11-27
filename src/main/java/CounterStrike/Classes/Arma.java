@@ -5,7 +5,7 @@ import java.util.Collection;
 public class Arma extends Artefato{
     private Float comprimento_cano;
     private Tipo tipo;
-    private Municao municao;
+    private Municao municao; // collection
 
     public Arma(Float comprimento_cano, Tipo tipo, Municao municao, Integer id, String nome, Float peso, Float valor) {
         super(id, nome, peso, valor);

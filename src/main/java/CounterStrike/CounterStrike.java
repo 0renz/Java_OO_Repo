@@ -73,7 +73,7 @@ public class CounterStrike {
         cal2.setTime(sdf.parse("20/11/2023"));
 
         Jogador j1 = new Jogador();
-        j1.setNickname("Lorenzinho123");
+        j1.setNickname("jogador a");
         j1.setArtefato(arma_1);
         j1.setArtefato(municao_1);
         j1.setPatente(patente_3);
@@ -81,7 +81,7 @@ public class CounterStrike {
         listaJogadores.add(j1);
 
         Jogador j2 = new Jogador();
-        j2.setNickname("Vinicinho89i2");
+        j2.setNickname("jogador b");
         j2.setArtefato(arma_1);
         j2.setArtefato(arma_1);
         j2.setPatente(patente_2);

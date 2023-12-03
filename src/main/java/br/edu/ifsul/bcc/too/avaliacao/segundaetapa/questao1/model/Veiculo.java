@@ -1,7 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ *
+ * @author 0renz
+ */
 public class Veiculo {
     private String placa;
     private String modelo;
@@ -9,13 +18,6 @@ public class Veiculo {
     private Calendar data_ultimo_servico;
 
     public Veiculo() {
-    }
-
-    public Veiculo(String placa, String modelo, Integer ano, Calendar data_ultimo_servico) {
-        this.placa = placa;
-        this.modelo = modelo;
-        this.ano = ano;
-        this.data_ultimo_servico = data_ultimo_servico;
     }
 
     public String getPlaca() {
@@ -42,11 +44,14 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public Calendar getData_ultimo_servico() {
-        return data_ultimo_servico;
+    public String getData_ultimo_servico() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data_ultimo_servico.getTime());
     }
 
     public void setData_ultimo_servico(Calendar data_ultimo_servico) {
         this.data_ultimo_servico = data_ultimo_servico;
     }
+    
+    
 }

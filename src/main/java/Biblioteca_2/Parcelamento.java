@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
+package Biblioteca_2;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -11,16 +11,18 @@ import java.util.Calendar;
  *
  * @author 0renz
  */
-public class Pagamento {
+public class Parcelamento {
+
     private Integer id;
     private Integer numero_parcela;
     private Calendar data_vencimento;
     private Calendar data_pagamento;
-    private Float valor;
-    private Servico servico;
-    private FormaPagamento formaPagamento;
+    private Double valor;
+    private Double valor_pago;
+    private Situacao situacao;
+    private Emprestimo emprestimo;
 
-    public Pagamento() {
+    public Parcelamento() {
     }
 
     public Integer getId() {
@@ -57,29 +59,39 @@ public class Pagamento {
         this.data_pagamento = data_pagamento;
     }
 
-    public Float getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(Float valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
-    public Servico getServico() {
-        return servico;
+    public Double getValor_pago() {
+        return valor_pago;
     }
 
-    public void setServico(Servico servico) {
-        this.servico = servico;
+    public void setValor_pago(Double valor_pago) {
+        this.valor_pago = valor_pago;
     }
 
-    public FormaPagamento getFormaPagamento() {
-        return formaPagamento;
+    public Situacao getSituacao() {
+        return situacao;
     }
 
-    public void setFormaPagamento(FormaPagamento formaPagamento) {
-        this.formaPagamento = formaPagamento;
+    public void setSituacao(Situacao situacao) {
+        this.situacao = situacao;
     }
+
+    public Emprestimo getEmprestimo() {
+        return emprestimo;
+    }
+
+    public void setEmprestimo(Emprestimo emprestimo) {
+        this.emprestimo = emprestimo;
+    }
+    
+    
     
     
 }

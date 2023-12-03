@@ -1,8 +1,16 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ *
+ * @author 0renz
+ */
 public abstract class Pessoa {
     private String cpf;
     private String nome;
@@ -29,8 +37,9 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public Calendar getData_nascimento() {
-        return data_nascimento;
+    public String getData_nascimento() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data_nascimento.getTime());
     }
 
     public void setData_nascimento(Calendar data_nascimento) {
@@ -51,5 +60,7 @@ public abstract class Pessoa {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
-    } 
+    }
+    
+    
 }

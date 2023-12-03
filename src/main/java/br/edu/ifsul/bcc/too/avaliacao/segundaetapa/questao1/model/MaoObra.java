@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author 20222PF.CC0021
+ * @author 0renz
  */
 public class MaoObra {
     private Integer id;
@@ -17,13 +17,6 @@ public class MaoObra {
     private Float valor;
 
     public MaoObra() {
-    }
-
-    public MaoObra(Integer id, String descricao, Date tempo_estimado_execucao, Float valor) {
-        this.id = id;
-        this.descricao = descricao;
-        this.tempo_estimado_execucao = tempo_estimado_execucao;
-        this.valor = valor;
     }
 
     public Integer getId() {
@@ -57,4 +50,6 @@ public class MaoObra {
     public void setValor(Float valor) {
         this.valor = valor;
     }
+    
+    
 }

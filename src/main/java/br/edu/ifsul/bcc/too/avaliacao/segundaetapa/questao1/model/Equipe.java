@@ -1,14 +1,21 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
-
+/**
+ *
+ * @author 0renz
+ */
 public class Equipe {
     private Integer id;
     private String nome;
     private String especialidades;
-    private Collection<Funcionario> Funcionarios;
+    private Collection<Funcionario> funcionarios;
 
     public Equipe() {
     }
@@ -38,11 +45,19 @@ public class Equipe {
     }
 
     public Collection<Funcionario> getFuncionarios() {
-        return Funcionarios;
+        return funcionarios;
+    }
+    
+    public void setFuncionario(Funcionario funcionario) {
+        if (this.funcionarios == null)
+        {
+            this.funcionarios = new ArrayList<>();
+        }
+        this.funcionarios.add(funcionario);
     }
 
-    public void setFuncionarios(Collection<Funcionario> Funcionarios) {
-        this.Funcionarios = Funcionarios;
+    public void setFuncionarios(Collection<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
     }
     
     

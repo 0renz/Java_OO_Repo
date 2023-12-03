@@ -4,32 +4,26 @@
  */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 
 /**
  *
- * @author 20222PF.CC0021
+ * @author 0renz
  */
 public class Orcamento {
     private Integer id;
     private String observacoes;
     private Calendar data;
-    private Collection<MaoObra> MaoObras;
-    private Collection<Peca> Pecas;
-    private Cliente cliente;
+    private Collection<MaoObra> maoObras;
     private Veiculo veiculo;
+    private Collection<Peca> pecas;
+    private Cliente cliente;
     private Funcionario funcionario;
 
     public Orcamento() {
-    }
-
-    public Veiculo getVeiculo() {
-        return veiculo;
-    }
-
-    public void setVeiculo(Veiculo veiculo) {
-        this.veiculo = veiculo;
     }
 
     public Integer getId() {
@@ -48,8 +42,9 @@ public class Orcamento {
         this.observacoes = observacoes;
     }
 
-    public Calendar getData() {
-        return data;
+    public String getData() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data.getTime());
     }
 
     public void setData(Calendar data) {
@@ -57,19 +52,43 @@ public class Orcamento {
     }
 
     public Collection<MaoObra> getMaoObras() {
-        return MaoObras;
+        return maoObras;
+    }
+    
+    public void setMaoObra(MaoObra maoObra) {
+        if (this.maoObras == null)
+        {
+            this.maoObras = new ArrayList<>();
+        }
+        this.maoObras.add(maoObra);
     }
 
-    public void setMaoObras(Collection<MaoObra> MaoObras) {
-        this.MaoObras = MaoObras;
+    public void setMaoObras(Collection<MaoObra> maoObras) {
+        this.maoObras = maoObras;
+    }
+
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
     }
 
     public Collection<Peca> getPecas() {
-        return Pecas;
+        return pecas;
+    }
+    
+    public void setPeca(Peca peca) {
+        if (this.pecas == null)
+        {
+            this.pecas = new ArrayList<>();
+        }
+        this.pecas.add(peca);
     }
 
-    public void setPecas(Collection<Peca> Pecas) {
-        this.Pecas = Pecas;
+    public void setPecas(Collection<Peca> pecas) {
+        this.pecas = pecas;
     }
 
     public Cliente getCliente() {
@@ -87,8 +106,6 @@ public class Orcamento {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
-    
-    
     
     
 }

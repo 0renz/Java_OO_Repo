@@ -2,19 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
+package Biblioteca_2;
 
 /**
  *
  * @author 0renz
  */
-public class Peca {
+public class PalavrasChave {
     private Integer id;
     private String nome;
-    private Float valor;
-    private String fornecedor;
 
-    public Peca() {
+    public PalavrasChave() {
     }
 
     public Integer getId() {
@@ -32,22 +30,4 @@ public class Peca {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public Float getValor() {
-        return valor;
-    }
-
-    public void setValor(Float valor) {
-        this.valor = valor;
-    }
-
-    public String getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(String fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-    
-    
 }
